@@ -5,6 +5,10 @@ set -o pipefail
 # fail harder
 set -eu
 
+# shellcheck disable=SC1090,SC1091
+. "$(dirname "${BASH_SOURCE[0]}")/mickey_forever.sh"
+mickey_forever
+
 bp_dir=$(
 	cd "$(dirname "$0")/.."
 	pwd
